@@ -1,6 +1,14 @@
 import Image from "next/image";
+import ComingSoon from "./components/ComingSoon";
 
 export default function Home() {
+  // Check if coming soon mode is enabled
+  const isComingSoon = process.env.NEXT_PUBLIC_COMING_SOON === 'true';
+
+  if (isComingSoon) {
+    return <ComingSoon />;
+  }
+
   return (
     <div className="min-h-screen bg-linear-to-b from-[#82d9d0]/10 to-white">
       {/* Header */}
